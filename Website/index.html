@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kansas Storm Chasing</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  color:white;
+  background:
+  linear-gradient(rgba(0,0,0,.88), rgba(0,0,0,.88)),
+  url("logo.jpg");
+  background-size:700px;
+  background-repeat:repeat;
+  background-attachment:fixed;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 50px;
+  border-bottom:2px solid #2563eb;
+  background:rgba(0,0,0,.85);
+  backdrop-filter:blur(6px);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+nav h1{
+  font-size:34px;
+  font-weight:900;
+}
+
+nav p{
+  color:#facc15;
+  margin-top:5px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:25px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:#facc15;
+}
+
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:100px 60px;
+  flex-wrap:wrap;
+  gap:50px;
+  background:linear-gradient(to right,rgba(6,20,46,.92),rgba(0,0,0,.75));
+}
+
+.hero-text{
+  max-width:650px;
+}
+
+.hero h2{
+  font-size:70px;
+  line-height:1.1;
+  margin-bottom:25px;
+}
+
+.yellow{
+  color:#facc15;
+}
+
+.blue{
+  color:#3b82f6;
+}
+
+.hero p{
+  color:#ddd;
+  line-height:1.7;
+  font-size:18px;
+  margin-bottom:35px;
+}
+
+.btn{
+  padding:15px 35px;
+  border:none;
+  border-radius:12px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.3s;
+  margin-right:15px;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.btn-yellow{
+  background:#facc15;
+  color:black;
+}
+
+.btn-blue{
+  background:#2563eb;
+  color:white;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+}
+
+.hero img{
+  width:450px;
+  border-radius:25px;
+  border:4px solid #2563eb;
+  box-shadow:0 0 35px rgba(37,99,235,.5);
+}
+
+.section{
+  padding:90px 60px;
+  background:rgba(0,0,0,.65);
+  backdrop-filter:blur(5px);
+}
+
+.section-title{
+  text-align:center;
+  font-size:52px;
+  margin-bottom:15px;
+  font-weight:900;
+}
+
+.section-sub{
+  text-align:center;
+  color:#ccc;
+  margin-bottom:50px;
+  font-size:18px;
+}
+
+/* FIXED PRODUCT GRID */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+  justify-items:center;
+  align-items:start;
+}
+
+.card{
+  background:#111827;
+  border-radius:25px;
+  overflow:hidden;
+  border:2px solid #1d4ed8;
+  transition:.3s;
+  box-shadow:0 0 25px rgba(0,0,0,.5);
+  width:100%;
+  max-width:340px;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border-color:#facc15;
+}
+
+.card img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  display:block;
+}
+
+.card-content{
+  padding:25px;
+  text-align:center;
+}
+
+.card h3{
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+.price{
+  color:#facc15;
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:20px;
+  line-height:1.5;
+}
+
+.about{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:60px;
+  flex-wrap:wrap;
+}
+
+.about img{
+  width:350px;
+  border-radius:25px;
+  border:4px solid #facc15;
+  box-shadow:0 0 25px rgba(250,204,21,.35);
+}
+
+.about-text{
+  max-width:600px;
+}
+
+.about-text p{
+  color:#ddd;
+  line-height:1.8;
+  font-size:18px;
+  margin-top:20px;
+}
+
+.stats{
+  display:flex;
+  gap:20px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+
+.stat-box{
+  background:#0f172a;
+  border:2px solid #2563eb;
+  padding:25px;
+  border-radius:20px;
+  min-width:180px;
+}
+
+.stat-box h4{
+  color:#facc15;
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.cta{
+  padding:100px 40px;
+}
+
+.cta-box{
+  background:linear-gradient(to right,#2563eb,#facc15);
+  border-radius:35px;
+  padding:70px 40px;
+  text-align:center;
+  max-width:1000px;
+  margin:auto;
+  box-shadow:0 0 35px rgba(37,99,235,.4);
+}
+
+.cta-box h2{
+  color:black;
+  font-size:56px;
+  margin-bottom:20px;
+}
+
+.cta-box p{
+  color:#111;
+  font-size:20px;
+  margin-bottom:35px;
+}
+
+.footer{
+  text-align:center;
+  padding:35px;
+  border-top:2px solid #1d4ed8;
+  color:#aaa;
+  background:rgba(0,0,0,.9);
+}
+
+.popup{
+  display:none;
+  position:fixed;
+  z-index:2000;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.85);
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.popup-content{
+  background:#111827;
+  padding:30px;
+  border-radius:25px;
+  text-align:center;
+  border:3px solid #2563eb;
+  position:relative;
+  width:100%;
+  max-width:500px;
+}
+
+.popup-content img{
+  width:300px;
+  max-width:100%;
+  border-radius:15px;
+}
+
+.close-btn{
+  position:absolute;
+  top:10px;
+  right:20px;
+  font-size:35px;
+  cursor:pointer;
+  color:white;
+}
+
+@media(max-width:768px){
+
+  nav{
+    flex-direction:column;
+    gap:20px;
+    text-align:center;
+  }
+
+  .hero{
+    padding:70px 25px;
+  }
+
+  .hero h2{
+    font-size:48px;
+  }
+
+  .hero img{
+    width:100%;
+  }
+
+  .section{
+    padding:70px 25px;
+  }
+
+  .section-title{
+    font-size:40px;
+  }
+
+  .cta-box h2{
+    font-size:42px;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+
+<div>
+  <h1>Kansas Storm Chasing</h1>
+  <p>Storms Can't Stop Me</p>
+</div>
+
+<div>
+  <a href="#">Home</a>
+  <a href="#shop">Shop</a>
+  <a href="#about">About</a>
+  <a href="#join">Join</a>
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h2>
+REP THE BRAND.
+<span class="yellow">CHASE THE STORM.</span>
+</h2>
+
+<p>
+Official Kansas Storm Chasing merch built for storm lovers,
+chasers, and supporters.
+</p>
+
+<a href="#shop" class="btn btn-yellow">Shop Merch</a>
+<a href="#about" class="btn btn-blue">Our Mission</a>
+
+</div>
+
+<img src="shirt2.jpg" alt="Kansas Storm Chasing Shirt">
+
+</section>
+
+<section class="section" id="shop">
+
+<h2 class="section-title">
+Featured <span class="yellow">Merch</span>
+</h2>
+
+<p class="section-sub">
+Official storm chasing gear.
+</p>
+
+<div class="products">
+
+<div class="card">
+<img src="shirt2.jpg" alt="Shirt">
+<div class="card-content">
+<h3>Kansas Storm Chasing Shirt</h3>
+<p class="price">$20 S-L • $25 XL-2XL</p>
+<button class="btn btn-blue" onclick="openQR()">Buy Now</button>
+</div>
+</div>
+
+<div class="card">
+<img src="hat2.jpg" alt="Hat">
+<div class="card-content">
+<h3>Storm Chasing Hat</h3>
+<p class="price">$30</p>
+<button class="btn btn-blue" onclick="openQR()">Buy Now</button>
+</div>
+</div>
+
+<div class="card">
+<img src="stickers.jpg" alt="Sticker">
+<div class="card-content">
+<h3>Storm Chaser Stickers</h3>
+<p class="price">$3</p>
+<button class="btn btn-blue" onclick="openQR()">Buy Now</button>
+</div>
+</div>
+
+<div class="card">
+<img src="sticker2.jpg" alt="Sticker">
+<div class="card-content">
+<h3>Logo Sticker</h3>
+<p class="price">$3</p>
+<button class="btn btn-blue" onclick="openQR()">Buy Now</button>
+</div>
+</div>
+
+<div class="card">
+<img src="sweatshirt.jpg" alt="Sweatshirt">
+<div class="card-content">
+<h3>Storm Sweatshirt</h3>
+<p class="price">$35 S-L • $40 XL-2XL</p>
+<button class="btn btn-blue" onclick="openQR()">Buy Now</button>
+</div>
+</div>
+
+<div class="card">
+<img src="shirt.jpg" alt="Shirt">
+<div class="card-content">
+<h3>Classic Chasing Tee</h3>
+<p class="price">$20 S-L • $25 XL-2XL</p>
+<button class="btn btn-blue" onclick="openQR()">Buy Now</button>
+</div>
+</div>
+
+<div class="card">
+<img src="hat.jpg" alt="Hat">
+<div class="card-content">
+<h3>Mesh Storm Hat</h3>
+<p class="price">$30</p>
+<button class="btn btn-blue" onclick="openQR()">Buy Now</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section about" id="about">
+
+<img src="logo.jpg" alt="Logo">
+
+<div class="about-text">
+
+<h2 class="section-title" style="text-align:left;">
+About The <span class="blue">Mission</span>
+</h2>
+
+<p>
+Storm Recovery Support 🌪️
+Every purchase helps support storm recovery efforts and families impacted by severe weather. A portion of all Kansas Storm Chasing merch goes toward getting supplies and help to communities after storms.
+
+Wear the merch. Support the mission. Help us make a difference.
+</p>
+
+<div class="stats">
+
+<div class="stat-box">
+<h4>24/7</h4>
+<p>Storm Chasing</p>
+</div>
+
+<div class="stat-box">
+<h4>100%</h4>
+<p>Kansas Strong</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="cta">
+<div class="cta-box">
+<h2>JOIN THE STORM TEAM</h2>
+<p>Grab your gear and represent Kansas Storm Chasing everywhere you go.</p>
+<a href="#shop" class="btn btn-blue">Start Shopping</a>
+</div>
+</section>
+
+<footer class="footer" id="join">
+© 2026 Kansas Storm Chasing • Official Merch Store
+</footer>
+
+<div id="qrPopup" class="popup">
+
+  <div class="popup-content">
+
+    <span class="close-btn" onclick="closeQR()">
+      &times;
+    </span>
+
+    <form
+      action="https://formsubmit.co/kansasstormchasing32@gmail.com"
+      method="POST"
+      id="customerForm"
+    >
+
+      <img id="productPreview"
+      src=""
+      style="width:180px;
+      border-radius:20px;
+      margin-bottom:20px;
+      border:3px solid #2563eb;">
+
+      <h3 id="productTitle"
+      style="margin-bottom:20px;
+      color:#facc15;"></h3>
+
+      <input
+      type="hidden"
+      id="productName"
+      name="Product Ordered">
+
+      <input type="hidden"
+      name="_subject"
+      value="New Kansas Storm Chasing Order">
+
+      <input type="hidden"
+      name="_captcha"
+      value="false">
+
+      <input type="hidden"
+      name="_template"
+      value="table">
+
+      <h2 style="margin-bottom:20px;color:#facc15;">
+      Customer Information
+      </h2>
+
+      <input
+      type="text"
+      name="Full Name"
+      placeholder="Full Name"
+      class="form-input"
+      required>
+
+      <input
+      type="text"
+      name="PayPal Name"
+      placeholder="PayPal Name"
+      class="form-input"
+      required>
+
+      <textarea
+      name="Shipping Address"
+      placeholder="Shipping Address"
+      class="form-input form-textarea"
+      required></textarea>
+
+      <label style="display:block;text-align:left;margin-bottom:8px;color:#facc15;">
+      Clothing Size (Optional for hats & stickers)
+      </label>
+
+      <select
+      name="Clothing Size"
+      class="form-input">
+
+        <option value="">
+        Select Clothing Size
+        </option>
+
+        <option>Small</option>
+        <option>Medium</option>
+        <option>Large</option>
+        <option>XL</option>
+        <option>2XL</option>
+
+      </select>
+
+      <h2 style="margin-top:25px;margin-bottom:20px;color:#facc15;">
+      Scan To Pay
+      </h2>
+
+      <img
+      src="qr code (1).jpg"
+      alt="QR Code"
+      style="width:300px;max-width:100%;border-radius:15px;">
+
+      <button
+      type="submit"
+      class="btn btn-yellow"
+      style="margin-top:25px;">
+
+      Submit Order
+
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<style>
+.popup{
+display:none;
+position:fixed;
+z-index:2000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.popup-content{
+background:#111827;
+padding:30px;
+border-radius:25px;
+text-align:center;
+border:3px solid #2563eb;
+position:relative;
+width:100%;
+max-width:500px;
+}
+
+.form-input{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border:none;
+border-radius:12px;
+font-size:16px;
+}
+
+.form-textarea{
+min-height:120px;
+resize:none;
+}
+
+.close-btn{
+position:absolute;
+top:10px;
+right:20px;
+font-size:35px;
+cursor:pointer;
+color:white;
+}
+</style>
+
+<script>
+
+function openQR(product,image){
+
+  document.getElementById("qrPopup").style.display = "flex";
+
+  document.getElementById("productTitle").innerText = product;
+
+  document.getElementById("productPreview").src = image;
+
+  document.getElementById("productName").value = product;
+
+}
+
+function closeQR(){
+
+  document.getElementById("qrPopup").style.display = "none";
+
+}
+
+window.onclick = function(event){
+
+  const popup =
+  document.getElementById("qrPopup");
+
+  if(event.target == popup){
+
+    closeQR();
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
