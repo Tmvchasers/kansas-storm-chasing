@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kansas Storm Chasing</title> 
+<title>Kansas Storm Chasing</title>
 
 <style>
 
@@ -149,7 +149,6 @@ nav a:hover{
   font-size:18px;
 }
 
-/* FIXED PRODUCT GRID */
 .products{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -305,10 +304,18 @@ nav a:hover{
   max-width:500px;
 }
 
-.popup-content img{
-  width:300px;
-  max-width:100%;
-  border-radius:15px;
+.form-input{
+  width:100%;
+  padding:14px;
+  margin-bottom:15px;
+  border:none;
+  border-radius:12px;
+  font-size:16px;
+}
+
+.form-textarea{
+  min-height:120px;
+  resize:none;
 }
 
 .close-btn{
@@ -414,7 +421,10 @@ Official storm chasing gear.
 <div class="card-content">
 <h3>Kansas Storm Chasing Shirt</h3>
 <p class="price">$20 S-L • $25 XL-2XL</p>
-<button class="btn btn-blue" onclick="openQR()">Buy Now</button>
+<button class="btn btn-blue"
+onclick="openQR('Kansas Storm Chasing Shirt','shirt2.jpg')">
+Buy Now
+</button>
 </div>
 </div>
 
@@ -423,7 +433,10 @@ Official storm chasing gear.
 <div class="card-content">
 <h3>Storm Chasing Hat</h3>
 <p class="price">$30</p>
-<button class="btn btn-blue" onclick="openQR()">Buy Now</button>
+<button class="btn btn-blue"
+onclick="openQR('Storm Chasing Hat','hat2.jpg')">
+Buy Now
+</button>
 </div>
 </div>
 
@@ -432,7 +445,10 @@ Official storm chasing gear.
 <div class="card-content">
 <h3>Storm Chaser Stickers</h3>
 <p class="price">$3</p>
-<button class="btn btn-blue" onclick="openQR()">Buy Now</button>
+<button class="btn btn-blue"
+onclick="openQR('Storm Chaser Stickers','stickers.jpg')">
+Buy Now
+</button>
 </div>
 </div>
 
@@ -441,7 +457,10 @@ Official storm chasing gear.
 <div class="card-content">
 <h3>Logo Sticker</h3>
 <p class="price">$3</p>
-<button class="btn btn-blue" onclick="openQR()">Buy Now</button>
+<button class="btn btn-blue"
+onclick="openQR('Logo Sticker','sticker2.jpg')">
+Buy Now
+</button>
 </div>
 </div>
 
@@ -450,7 +469,10 @@ Official storm chasing gear.
 <div class="card-content">
 <h3>Storm Sweatshirt</h3>
 <p class="price">$35 S-L • $40 XL-2XL</p>
-<button class="btn btn-blue" onclick="openQR()">Buy Now</button>
+<button class="btn btn-blue"
+onclick="openQR('Storm Sweatshirt','sweatshirt.jpg')">
+Buy Now
+</button>
 </div>
 </div>
 
@@ -459,7 +481,10 @@ Official storm chasing gear.
 <div class="card-content">
 <h3>Classic Chasing Tee</h3>
 <p class="price">$20 S-L • $25 XL-2XL</p>
-<button class="btn btn-blue" onclick="openQR()">Buy Now</button>
+<button class="btn btn-blue"
+onclick="openQR('Classic Chasing Tee','shirt.jpg')">
+Buy Now
+</button>
 </div>
 </div>
 
@@ -468,7 +493,10 @@ Official storm chasing gear.
 <div class="card-content">
 <h3>Mesh Storm Hat</h3>
 <p class="price">$30</p>
-<button class="btn btn-blue" onclick="openQR()">Buy Now</button>
+<button class="btn btn-blue"
+onclick="openQR('Mesh Storm Hat','hat.jpg')">
+Buy Now
+</button>
 </div>
 </div>
 
@@ -487,33 +515,9 @@ About The <span class="blue">Mission</span>
 
 <p>
 Storm Recovery Support 🌪️
-Every purchase helps support storm recovery efforts and families impacted by severe weather. A portion of all Kansas Storm Chasing merch goes toward getting supplies and help to communities after storms.
-
-Wear the merch. Support the mission. Help us make a difference.
+Every purchase helps support storm recovery efforts and families impacted by severe weather.
 </p>
 
-<div class="stats">
-
-<div class="stat-box">
-<h4>24/7</h4>
-<p>Storm Chasing</p>
-</div>
-
-<div class="stat-box">
-<h4>100%</h4>
-<p>Kansas Strong</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<section class="cta">
-<div class="cta-box">
-<h2>JOIN THE STORM TEAM</h2>
-<p>Grab your gear and represent Kansas Storm Chasing everywhere you go.</p>
-<a href="#shop" class="btn btn-blue">Start Shopping</a>
 </div>
 </section>
 
@@ -523,194 +527,141 @@ Wear the merch. Support the mission. Help us make a difference.
 
 <div id="qrPopup" class="popup">
 
-  <div class="popup-content">
+<div class="popup-content">
 
-    <span class="close-btn" onclick="closeQR()">
-      &times;
-    </span>
+<span class="close-btn" onclick="closeQR()">
+&times;
+</span>
 
-    <form
-      action="https://formsubmit.co/kansasstormchasing32@gmail.com"
-      method="POST"
-      id="customerForm"
-    >
+<form
+action="https://formsubmit.co/kansasstormchasing32@gmail.com"
+method="POST">
 
-      <img id="productPreview"
-      src=""
-      style="width:180px;
-      border-radius:20px;
-      margin-bottom:20px;
-      border:3px solid #2563eb;">
+<img
+id="productPreview"
+src=""
+style="width:180px;
+border-radius:20px;
+margin-bottom:20px;
+border:3px solid #2563eb;">
 
-      <h3 id="productTitle"
-      style="margin-bottom:20px;
-      color:#facc15;"></h3>
+<h3
+id="productTitle"
+style="margin-bottom:20px;
+color:#facc15;"></h3>
 
-      <input
-      type="hidden"
-      id="productName"
-      name="Product Ordered">
+<input
+type="hidden"
+id="productName"
+name="Product Ordered">
 
-      <input type="hidden"
-      name="_subject"
-      value="New Kansas Storm Chasing Order">
+<input
+type="hidden"
+name="_subject"
+value="New Kansas Storm Chasing Order">
 
-      <input type="hidden"
-      name="_captcha"
-      value="false">
+<input
+type="hidden"
+name="_captcha"
+value="false">
 
-      <input type="hidden"
-      name="_template"
-      value="table">
+<input
+type="hidden"
+name="_template"
+value="table">
 
-      <h2 style="margin-bottom:20px;color:#facc15;">
-      Customer Information
-      </h2>
+<h2 style="margin-bottom:20px;color:#facc15;">
+Customer Information
+</h2>
 
-      <input
-      type="text"
-      name="Full Name"
-      placeholder="Full Name"
-      class="form-input"
-      required>
+<input
+type="text"
+name="Full Name"
+placeholder="Full Name"
+class="form-input"
+required>
 
-      <input
-      type="text"
-      name="PayPal Name"
-      placeholder="PayPal Name"
-      class="form-input"
-      required>
+<input
+type="text"
+name="PayPal Name"
+placeholder="PayPal Name"
+class="form-input"
+required>
 
-      <textarea
-      name="Shipping Address"
-      placeholder="Shipping Address"
-      class="form-input form-textarea"
-      required></textarea>
+<textarea
+name="Shipping Address"
+placeholder="Shipping Address"
+class="form-input form-textarea"
+required></textarea>
 
-      <label style="display:block;text-align:left;margin-bottom:8px;color:#facc15;">
-      Clothing Size (Optional for hats & stickers)
-      </label>
+<select
+name="Clothing Size"
+class="form-input">
 
-      <select
-      name="Clothing Size"
-      class="form-input">
+<option value="">
+Select Clothing Size
+</option>
 
-        <option value="">
-        Select Clothing Size
-        </option>
+<option>Small</option>
+<option>Medium</option>
+<option>Large</option>
+<option>XL</option>
+<option>2XL</option>
 
-        <option>Small</option>
-        <option>Medium</option>
-        <option>Large</option>
-        <option>XL</option>
-        <option>2XL</option>
+</select>
 
-      </select>
+<h2 style="margin-top:25px;margin-bottom:20px;color:#facc15;">
+Scan To Pay
+</h2>
 
-      <h2 style="margin-top:25px;margin-bottom:20px;color:#facc15;">
-      Scan To Pay
-      </h2>
+<img
+src="qrcode.jpg"
+alt="QR Code"
+style="width:300px;max-width:100%;border-radius:15px;">
 
-      <img
-      src="qr code (1).jpg"
-      alt="QR Code"
-      style="width:300px;max-width:100%;border-radius:15px;">
+<button
+type="submit"
+class="btn btn-yellow"
+style="margin-top:25px;">
 
-      <button
-      type="submit"
-      class="btn btn-yellow"
-      style="margin-top:25px;">
+Submit Order
 
-      Submit Order
+</button>
 
-      </button>
-
-    </form>
-
-  </div>
+</form>
 
 </div>
-
-<style>
-.popup{
-display:none;
-position:fixed;
-z-index:2000;
-left:0;
-top:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.85);
-justify-content:center;
-align-items:center;
-padding:20px;
-}
-
-.popup-content{
-background:#111827;
-padding:30px;
-border-radius:25px;
-text-align:center;
-border:3px solid #2563eb;
-position:relative;
-width:100%;
-max-width:500px;
-}
-
-.form-input{
-width:100%;
-padding:14px;
-margin-bottom:15px;
-border:none;
-border-radius:12px;
-font-size:16px;
-}
-
-.form-textarea{
-min-height:120px;
-resize:none;
-}
-
-.close-btn{
-position:absolute;
-top:10px;
-right:20px;
-font-size:35px;
-cursor:pointer;
-color:white;
-}
-</style>
+</div>
 
 <script>
 
 function openQR(product,image){
 
-  document.getElementById("qrPopup").style.display = "flex";
+document.getElementById("qrPopup").style.display = "flex";
 
-  document.getElementById("productTitle").innerText = product;
+document.getElementById("productTitle").innerText = product;
 
-  document.getElementById("productPreview").src = image;
+document.getElementById("productPreview").src = image;
 
-  document.getElementById("productName").value = product;
+document.getElementById("productName").value = product;
 
 }
 
 function closeQR(){
 
-  document.getElementById("qrPopup").style.display = "none";
+document.getElementById("qrPopup").style.display = "none";
 
 }
 
 window.onclick = function(event){
 
-  const popup =
-  document.getElementById("qrPopup");
+const popup = document.getElementById("qrPopup");
 
-  if(event.target == popup){
+if(event.target == popup){
 
-    closeQR();
+closeQR();
 
-  }
+}
 
 }
 
