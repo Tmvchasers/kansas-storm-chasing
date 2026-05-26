@@ -279,52 +279,56 @@ nav a:hover{
   background:rgba(0,0,0,.9);
 }
 
+/* UPDATED POPUP SCROLL FIX */
+
 .popup{
-  display:none;
-  position:fixed;
-  z-index:2000;
-  left:0;
-  top:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,.85);
-  justify-content:center;
-  align-items:center;
-  padding:20px;
+display:none;
+position:fixed;
+z-index:2000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+justify-content:center;
+align-items:flex-start;
+padding:20px;
+overflow-y:auto;
 }
 
 .popup-content{
-  background:#111827;
-  padding:30px;
-  border-radius:25px;
-  text-align:center;
-  border:3px solid #2563eb;
-  position:relative;
-  width:100%;
-  max-width:500px;
+background:#111827;
+padding:30px;
+border-radius:25px;
+text-align:center;
+border:3px solid #2563eb;
+position:relative;
+width:100%;
+max-width:500px;
+margin:40px auto;
 }
 
 .form-input{
-  width:100%;
-  padding:14px;
-  margin-bottom:15px;
-  border:none;
-  border-radius:12px;
-  font-size:16px;
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border:none;
+border-radius:12px;
+font-size:16px;
 }
 
 .form-textarea{
-  min-height:120px;
-  resize:none;
+min-height:120px;
+resize:none;
 }
 
 .close-btn{
-  position:absolute;
-  top:10px;
-  right:20px;
-  font-size:35px;
-  cursor:pointer;
-  color:white;
+position:absolute;
+top:10px;
+right:20px;
+font-size:35px;
+cursor:pointer;
+color:white;
 }
 
 @media(max-width:768px){
@@ -363,6 +367,7 @@ nav a:hover{
 
 </style>
 </head>
+
 <body>
 
 <nav>
@@ -503,24 +508,6 @@ Buy Now
 </div>
 </section>
 
-<section class="section about" id="about">
-
-<img src="logo.jpg" alt="Logo">
-
-<div class="about-text">
-
-<h2 class="section-title" style="text-align:left;">
-About The <span class="blue">Mission</span>
-</h2>
-
-<p>
-Storm Recovery Support 🌪️
-Every purchase helps support storm recovery efforts and families impacted by severe weather.
-</p>
-
-</div>
-</section>
-
 <footer class="footer" id="join">
 © 2026 Kansas Storm Chasing • Official Merch Store
 </footer>
@@ -535,18 +522,18 @@ Every purchase helps support storm recovery efforts and families impacted by sev
 
 <form
 action="https://formsubmit.co/kansasstormchasing32@gmail.com"
-method="POST">
+method="POST"
+id="customerForm"
+>
 
-<img
-id="productPreview"
+<img id="productPreview"
 src=""
 style="width:180px;
 border-radius:20px;
 margin-bottom:20px;
 border:3px solid #2563eb;">
 
-<h3
-id="productTitle"
+<h3 id="productTitle"
 style="margin-bottom:20px;
 color:#facc15;"></h3>
 
@@ -555,18 +542,15 @@ type="hidden"
 id="productName"
 name="Product Ordered">
 
-<input
-type="hidden"
+<input type="hidden"
 name="_subject"
 value="New Kansas Storm Chasing Order">
 
-<input
-type="hidden"
+<input type="hidden"
 name="_captcha"
 value="false">
 
-<input
-type="hidden"
+<input type="hidden"
 name="_template"
 value="table">
 
@@ -631,6 +615,7 @@ Submit Order
 </form>
 
 </div>
+
 </div>
 
 <script>
@@ -655,7 +640,8 @@ document.getElementById("qrPopup").style.display = "none";
 
 window.onclick = function(event){
 
-const popup = document.getElementById("qrPopup");
+const popup =
+document.getElementById("qrPopup");
 
 if(event.target == popup){
 
