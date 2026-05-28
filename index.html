@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Kansas Storm Chasing</title>
 
   <style>
@@ -19,7 +20,8 @@
       display:flex;
       justify-content:center;
       align-items:center;
-      text-align:center;
+      padding:20px;
+
       color:white;
 
       background:
@@ -29,17 +31,20 @@
       background-size:700px;
       background-repeat:repeat;
       background-attachment:fixed;
-      padding:20px;
+    }
+
+    .container{
+      width:100%;
+      max-width:950px;
     }
 
     .update-box{
-      background:rgba(17,24,39,.92);
+      background:rgba(17,24,39,.94);
       border:3px solid #2563eb;
       border-radius:35px;
       padding:70px 40px;
-      max-width:850px;
-      width:100%;
-      box-shadow:0 0 40px rgba(37,99,235,.4);
+      text-align:center;
+      box-shadow:0 0 40px rgba(37,99,235,.45);
       backdrop-filter:blur(8px);
     }
 
@@ -53,9 +58,9 @@
 
     h1{
       font-size:64px;
-      margin-bottom:20px;
-      font-weight:900;
       line-height:1.1;
+      margin-bottom:25px;
+      font-weight:900;
     }
 
     .yellow{
@@ -70,24 +75,84 @@
       color:#d1d5db;
       font-size:22px;
       line-height:1.8;
-      margin-bottom:35px;
+      margin-bottom:40px;
     }
 
     .status{
       display:inline-block;
       background:#2563eb;
-      color:white;
-      padding:14px 28px;
-      border-radius:14px;
+      padding:14px 30px;
+      border-radius:15px;
       font-size:18px;
       font-weight:bold;
+      margin-bottom:45px;
       box-shadow:0 0 20px rgba(37,99,235,.45);
     }
 
+    .tracker-section{
+      margin-top:25px;
+      text-align:left;
+    }
+
+    .tracker-title{
+      text-align:center;
+      font-size:38px;
+      margin-bottom:35px;
+      font-weight:900;
+    }
+
+    .tracker-item{
+      margin-bottom:28px;
+    }
+
+    .tracker-top{
+      display:flex;
+      justify-content:space-between;
+      margin-bottom:10px;
+      font-size:18px;
+      font-weight:bold;
+    }
+
+    .progress-bar{
+      width:100%;
+      height:22px;
+      background:#0f172a;
+      border-radius:20px;
+      overflow:hidden;
+      border:2px solid #1d4ed8;
+    }
+
+    .progress{
+      height:100%;
+      border-radius:20px;
+      transition:1s;
+    }
+
+    .progress1{
+      width:90%;
+      background:#facc15;
+    }
+
+    .progress2{
+      width:65%;
+      background:#3b82f6;
+    }
+
+    .progress3{
+      width:40%;
+      background:#22c55e;
+    }
+
+    .progress4{
+      width:75%;
+      background:#f97316;
+    }
+
     .footer{
-      margin-top:40px;
+      margin-top:45px;
       color:#9ca3af;
       font-size:15px;
+      text-align:center;
     }
 
     @media(max-width:768px){
@@ -104,8 +169,16 @@
         font-size:18px;
       }
 
+      .tracker-title{
+        font-size:30px;
+      }
+
       .update-box img{
         width:140px;
+      }
+
+      .tracker-top{
+        font-size:15px;
       }
 
     }
@@ -115,31 +188,103 @@
 
 <body>
 
-  <div class="update-box">
+  <div class="container">
 
-    <img src="logo.jpg" alt="Kansas Storm Chasing Logo">
+    <div class="update-box">
 
-    <h1>
-      STORE IS DOWN
-      <span class="yellow">FOR UPDATES</span>
-    </h1>
+      <img src="logo.jpg"
+      alt="Kansas Storm Chasing Logo">
 
-    <p>
-      Kansas Storm Chasing is currently updating the merch store
-      and improving the website experience.
+      <h1>
 
-      <br><br>
+        STORE IS DOWN
+        <span class="yellow">FOR UPDATES</span>
 
-      Please check back soon for new merch,
-      updated products, and future releases.
-    </p>
+      </h1>
 
-    <div class="status">
-      Website Updates In Progress
-    </div>
+      <p>
 
-    <div class="footer">
-      © 2026 Kansas Storm Chasing
+        Kansas Storm Chasing is currently updating the merch store,
+        adding new products, and improving the payment system.
+
+        <br><br>
+
+        We're working hard to launch an even better shopping experience.
+        Please check back soon.
+
+      </p>
+
+      <div class="status">
+        Website Updates In Progress
+      </div>
+
+      <div class="tracker-section">
+
+        <h2 class="tracker-title">
+
+          UPDATE
+          <span class="blue">TRACKER</span>
+
+        </h2>
+
+        <div class="tracker-item">
+
+          <div class="tracker-top">
+            <span>Adding New Shirt</span>
+            <span>0%</span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress progress1"></div>
+          </div>
+
+        </div>
+
+        <div class="tracker-item">
+
+          <div class="tracker-top">
+            <span>Payment System Upgrade</span>
+            <span>0%</span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress progress2"></div>
+          </div>
+
+        </div>
+
+        <div class="tracker-item">
+
+          <div class="tracker-top">
+            <span>New Product Photos</span>
+            <span>0%</span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress progress3"></div>
+          </div>
+
+        </div>
+
+        <div class="tracker-item">
+
+          <div class="tracker-top">
+            <span>Store Optimization</span>
+            <span>100%</span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress progress4"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer">
+        © 2026 Kansas Storm Chasing
+      </div>
+
     </div>
 
   </div>
