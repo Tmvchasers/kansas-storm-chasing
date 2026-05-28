@@ -35,31 +35,22 @@
 
     .container{
       width:100%;
-      max-width:950px;
+      max-width:1000px;
     }
 
     .update-box{
-      background:rgba(17,24,39,.94);
+      background:rgba(10,18,40,.95);
       border:3px solid #2563eb;
       border-radius:35px;
       padding:70px 40px;
-      text-align:center;
       box-shadow:0 0 40px rgba(37,99,235,.45);
       backdrop-filter:blur(8px);
     }
 
-    .update-box img{
-      width:180px;
-      border-radius:30px;
-      margin-bottom:30px;
-      border:4px solid #facc15;
-      box-shadow:0 0 30px rgba(250,204,21,.35);
-    }
-
     h1{
-      font-size:64px;
-      line-height:1.1;
-      margin-bottom:25px;
+      text-align:center;
+      font-size:72px;
+      margin-bottom:20px;
       font-weight:900;
     }
 
@@ -71,88 +62,70 @@
       color:#3b82f6;
     }
 
-    p{
+    .desc{
+      text-align:center;
       color:#d1d5db;
       font-size:22px;
       line-height:1.8;
-      margin-bottom:40px;
-    }
-
-    .status{
-      display:inline-block;
-      background:#2563eb;
-      padding:14px 30px;
-      border-radius:15px;
-      font-size:18px;
-      font-weight:bold;
-      margin-bottom:45px;
-      box-shadow:0 0 20px rgba(37,99,235,.45);
-    }
-
-    .tracker-section{
-      margin-top:25px;
-      text-align:left;
+      margin-bottom:50px;
     }
 
     .tracker-title{
       text-align:center;
-      font-size:38px;
-      margin-bottom:35px;
+      font-size:58px;
+      margin-bottom:50px;
       font-weight:900;
     }
 
     .tracker-item{
-      margin-bottom:28px;
+      margin-bottom:40px;
     }
 
     .tracker-top{
       display:flex;
       justify-content:space-between;
-      margin-bottom:10px;
-      font-size:18px;
+      align-items:center;
+      margin-bottom:14px;
+      font-size:20px;
       font-weight:bold;
     }
 
     .progress-bar{
       width:100%;
-      height:22px;
-      background:#0f172a;
-      border-radius:20px;
+      height:24px;
+      border-radius:30px;
       overflow:hidden;
-      border:2px solid #1d4ed8;
+      border:2px solid #2563eb;
+      background:#091226;
     }
 
     .progress{
       height:100%;
-      border-radius:20px;
-      transition:1s;
+      border-radius:30px;
+      transition:1.2s ease;
     }
 
-    .progress1{
-      width:90%;
+    .yellow-bar{
       background:#facc15;
     }
 
-    .progress2{
-      width:65%;
+    .blue-bar{
       background:#3b82f6;
     }
 
-    .progress3{
-      width:40%;
+    .green-bar{
       background:#22c55e;
     }
 
-    .progress4{
-      width:75%;
+    .orange-bar{
       background:#f97316;
     }
 
     .footer{
-      margin-top:45px;
-      color:#9ca3af;
-      font-size:15px;
       text-align:center;
+      margin-top:55px;
+      color:#9ca3af;
+      font-size:18px;
     }
 
     @media(max-width:768px){
@@ -162,23 +135,19 @@
       }
 
       h1{
-        font-size:42px;
-      }
-
-      p{
-        font-size:18px;
+        font-size:46px;
       }
 
       .tracker-title{
-        font-size:30px;
+        font-size:40px;
       }
 
-      .update-box img{
-        width:140px;
+      .desc{
+        font-size:18px;
       }
 
       .tracker-top{
-        font-size:15px;
+        font-size:16px;
       }
 
     }
@@ -192,9 +161,6 @@
 
     <div class="update-box">
 
-      <img src="logo.jpg"
-      alt="Kansas Storm Chasing Logo">
-
       <h1>
 
         STORE IS DOWN
@@ -202,81 +168,84 @@
 
       </h1>
 
-      <p>
+      <p class="desc">
 
         Kansas Storm Chasing is currently updating the merch store,
-        adding new products, and improving the payment system.
+        improving payments, and adding new products.
 
         <br><br>
 
-        We're working hard to launch an even better shopping experience.
         Please check back soon.
 
       </p>
 
-      <div class="status">
-        Website Updates In Progress
+      <h2 class="tracker-title">
+
+        UPDATE
+        <span class="blue">TRACKER</span>
+
+      </h2>
+
+      <!-- TRACKER 1 -->
+
+      <div class="tracker-item">
+
+        <div class="tracker-top">
+          <span>Adding New Shirt</span>
+          <span id="percent1">90%</span>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress yellow-bar"
+          id="bar1"></div>
+        </div>
+
       </div>
 
-      <div class="tracker-section">
+      <!-- TRACKER 2 -->
 
-        <h2 class="tracker-title">
+      <div class="tracker-item">
 
-          UPDATE
-          <span class="blue">TRACKER</span>
-
-        </h2>
-
-        <div class="tracker-item">
-
-          <div class="tracker-top">
-            <span>Adding New Shirt</span>
-            <span>0%</span>
-          </div>
-
-          <div class="progress-bar">
-            <div class="progress progress1"></div>
-          </div>
-
+        <div class="tracker-top">
+          <span>Payment System Upgrade</span>
+          <span id="percent2">65%</span>
         </div>
 
-        <div class="tracker-item">
-
-          <div class="tracker-top">
-            <span>Payment System Upgrade</span>
-            <span>0%</span>
-          </div>
-
-          <div class="progress-bar">
-            <div class="progress progress2"></div>
-          </div>
-
+        <div class="progress-bar">
+          <div class="progress blue-bar"
+          id="bar2"></div>
         </div>
 
-        <div class="tracker-item">
+      </div>
 
-          <div class="tracker-top">
-            <span>New Product Photos</span>
-            <span>0%</span>
-          </div>
+      <!-- TRACKER 3 -->
 
-          <div class="progress-bar">
-            <div class="progress progress3"></div>
-          </div>
+      <div class="tracker-item">
 
+        <div class="tracker-top">
+          <span>New Product Photos</span>
+          <span id="percent3">40%</span>
         </div>
 
-        <div class="tracker-item">
+        <div class="progress-bar">
+          <div class="progress green-bar"
+          id="bar3"></div>
+        </div>
 
-          <div class="tracker-top">
-            <span>Store Optimization</span>
-            <span>100%</span>
-          </div>
+      </div>
 
-          <div class="progress-bar">
-            <div class="progress progress4"></div>
-          </div>
+      <!-- TRACKER 4 -->
 
+      <div class="tracker-item">
+
+        <div class="tracker-top">
+          <span>Store Optimization</span>
+          <span id="percent4">75%</span>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress orange-bar"
+          id="bar4"></div>
         </div>
 
       </div>
@@ -288,6 +257,45 @@
     </div>
 
   </div>
+
+  <script>
+
+    // CHANGE THESE PERCENTAGES
+
+    let progress1 = 0;
+    let progress2 = 0;
+    let progress3 = 100;
+    let progress4 = 100;
+
+    // AUTO UPDATE BARS
+
+    document.getElementById("bar1").style.width =
+    progress1 + "%";
+
+    document.getElementById("bar2").style.width =
+    progress2 + "%";
+
+    document.getElementById("bar3").style.width =
+    progress3 + "%";
+
+    document.getElementById("bar4").style.width =
+    progress4 + "%";
+
+    // AUTO UPDATE TEXT
+
+    document.getElementById("percent1").innerText =
+    progress1 + "%";
+
+    document.getElementById("percent2").innerText =
+    progress2 + "%";
+
+    document.getElementById("percent3").innerText =
+    progress3 + "%";
+
+    document.getElementById("percent4").innerText =
+    progress4 + "%";
+
+  </script>
 
 </body>
 </html>
